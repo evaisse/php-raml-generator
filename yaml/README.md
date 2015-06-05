@@ -1,0 +1,1 @@
+Symfony1.4 YAML dumper
