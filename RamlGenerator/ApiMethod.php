@@ -349,14 +349,11 @@ class RamlGenerator_ApiMethod
      * Request body 
      * 
      * @param string $contentType a mime content type encoding for body request
-     * @param string $description a description schema for request body
+     * @param array $map a map for request body
      */
-    public function addRequestBody($contentType, $description, $example = false)
+    public function addRequestBody($contentType, $map)
     {
-        $this->requestBodies[$contentType] = array(
-            'schema'    => $description,
-            'example'   => $example,
-        );
+        $this->requestBodies[$contentType] = $map;
     }
 
 }
