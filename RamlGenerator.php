@@ -149,19 +149,7 @@ class RamlGenerator
         }
 
         if (count($method->getRequestBodies())) {
-
-            $map['body'] = array();
-
-            foreach ($method->getRequestBodies() as $key => $value) {
-
-                $map['body'][$key] = array();
-                $map['body'][$key]['schema'] = $value["schema"];
-
-                if ($value['example']) {
-                    $map['body'][$key]['example'] = $value['example'];
-                }
-
-            }
+            $map['body'] = $method->getRequestBodies();
         }
 
         return $map;

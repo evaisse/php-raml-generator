@@ -1,12 +1,6 @@
 <?php
-/**
- * RAML Api method description 
- *
- * @author Emmanuel VAISSE
- * @internal changelog:
- *     Emmanuel VAISSE - 2015-06-05 10:51:52
- *         new file
- */
+
+
 class RamlGenerator_ApiMethod
 {
 
@@ -349,14 +343,11 @@ class RamlGenerator_ApiMethod
      * Request body 
      * 
      * @param string $contentType a mime content type encoding for body request
-     * @param string $description a description schema for request body
+     * @param array $map a map for request body
      */
-    public function addRequestBody($contentType, $description, $example = false)
+    public function addRequestBody($contentType, $map)
     {
-        $this->requestBodies[$contentType] = array(
-            'schema'    => $description,
-            'example'   => $example,
-        );
+        $this->requestBodies[$contentType] = $map;
     }
 
 }
